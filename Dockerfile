@@ -23,6 +23,7 @@ COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 COPY --from=builder /app/lib ./lib
 COPY --from=builder /app/data ./data
+COPY --from=deps /app/node_modules/bcryptjs ./node_modules/bcryptjs
 COPY start.sh ./start.sh
 RUN chmod +x start.sh
 
